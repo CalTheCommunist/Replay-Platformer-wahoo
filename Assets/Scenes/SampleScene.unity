@@ -570,8 +570,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovomente
   player: {fileID: 692894362}
-  speed: 0
+  speed: 10
   jumping: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  move: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
