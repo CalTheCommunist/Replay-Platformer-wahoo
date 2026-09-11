@@ -971,8 +971,10 @@ MonoBehaviour:
   turnsmoothtime: 0.4
   speed: 10
   jumping: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  sprint: {fileID: -7471211009204490832, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   jumpHeight: 2.5
   isGrounded: 1
+  isSprinting: 0
 --- !u!54 &692894369
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -981,7 +983,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692894360}
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 3
   m_LinearDamping: 0
   m_AngularDamping: 1
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1520,7 +1522,7 @@ Transform:
   m_GameObject: {fileID: 1498653095}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.75, y: 2.07, z: 3.42}
+  m_LocalPosition: {x: 29.67, y: 2.07, z: 3.42}
   m_LocalScale: {x: 4.2117076, y: 5.328476, z: 4.2117076}
   m_ConstrainProportionsScale: 0
   m_Children: []
