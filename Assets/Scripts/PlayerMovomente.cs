@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovomente : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class PlayerMovomente : MonoBehaviour
     public InputActionReference jumping;
     public float jumpHeight = 2f;
     private bool jumpPressed = false;
-    private bool isGrounded = true;
+    public bool isGrounded = true;
 
 
     private void Jump(InputAction.CallbackContext obj)
@@ -29,7 +30,8 @@ public class PlayerMovomente : MonoBehaviour
     }
     void Start()
     {
-       
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     
@@ -88,4 +90,5 @@ public class PlayerMovomente : MonoBehaviour
     {
         isGrounded = false;
     }
+    
 }
