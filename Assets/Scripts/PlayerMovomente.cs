@@ -14,33 +14,22 @@ public class PlayerMovomente : MonoBehaviour
     private float turnvelocity = 5f;
 
     public InputActionReference jumping;
-    public InputActionReference sprint;
     public float jumpHeight = 2f;
     private bool jumpPressed = false;
     public bool isGrounded = true;
-    public bool isSprinting = true;
+   
 
 
     private void Jump(InputAction.CallbackContext obj)
     {
         jumpPressed = true;
     }
-    private void sprinting(InputAction.CallbackContext obj)
-    {
-        if (isSprinting == true)
-        {
-            isSprinting = false;
-        }
-        else if (isSprinting == false)
-        {
-            isSprinting = true;
-        }
-    }
+
 
     private void OnEnable()
     {
         jumping.action.started += Jump;
-        sprint.action.started += sprinting;
+       
     }
     void Start()
     {
@@ -59,14 +48,7 @@ public class PlayerMovomente : MonoBehaviour
    
     private void FixedUpdate()
     {
-        if (isSprinting == true)
-        {
-            speed = 20;
-        }
-        if(isSprinting == false)
-        {
-            speed = 10;
-        }
+      
         if (jumpPressed && isGrounded)
         {
             player.linearVelocity = new Vector3(
@@ -93,8 +75,7 @@ public class PlayerMovomente : MonoBehaviour
         player.linearVelocity = new Vector3(
      targetDirection.normalized.x * speed,
      player.linearVelocity.y,
-     targetDirection.normalized.z * speed
- );
+     targetDirection.normalized.z * speed);
 
     }
     private void OnCollisionEnter(Collision collision)
