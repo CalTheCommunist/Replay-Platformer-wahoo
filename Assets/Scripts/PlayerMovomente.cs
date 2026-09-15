@@ -18,6 +18,8 @@ public class PlayerMovomente : MonoBehaviour
     private bool jumpPressed = false;
     public bool isGrounded = true;
    
+    public Animator animator;
+    
 
 
     private void Jump(InputAction.CallbackContext obj)
@@ -35,13 +37,14 @@ public class PlayerMovomente : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        animator = GetComponent<Animator>();
     }
 
     
     void Update()
     {
         direction = move.action.ReadValue<Vector2>();
-          
+        
 
 
     }
@@ -67,18 +70,22 @@ public class PlayerMovomente : MonoBehaviour
 
         Vector3 camDir = cam.transform.rotation * direction;
         Vector3 targetDirection = new Vector3(camDir.x, 0, camDir.z);
+        if(cam.transform.position.y <= transform.position.y)
+        {
+            //targetDirection.x = targetDirection.x * -1;
+            //targetDirection.z = targetDirection.z * -1;
+        }
         if(direction != Vector2.zero)
         {
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(targetDirection), Time.deltaTime * turnvelocity);
         }
-
-        player.linearVelocity = new Vector3(
+     player.linearVelocity = new Vector3(
      targetDirection.normalized.x * speed,
      player.linearVelocity.y,
      targetDirection.normalized.z * speed);
 
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         foreach (ContactPoint contact in collision.contacts)
         {
