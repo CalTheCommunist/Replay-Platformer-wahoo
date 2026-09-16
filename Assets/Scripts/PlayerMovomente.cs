@@ -44,8 +44,10 @@ public class PlayerMovomente : MonoBehaviour
     void Update()
     {
         direction = move.action.ReadValue<Vector2>();
-        
 
+        animator.SetFloat("Speed",player.linearVelocity.magnitude);
+        animator.SetBool("jumping", jumpPressed);
+        animator.SetBool("OnGround", isGrounded);
 
     }
    
