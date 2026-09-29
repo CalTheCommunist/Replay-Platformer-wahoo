@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -46,8 +47,7 @@ public class PlayerMovomente : MonoBehaviour
         direction = move.action.ReadValue<Vector2>();
 
         animator.SetFloat("Speed",player.linearVelocity.magnitude);
-        animator.SetBool("jumping", jumpPressed);
-        animator.SetBool("OnGround", isGrounded);
+      
 
     }
    
@@ -64,24 +64,21 @@ public class PlayerMovomente : MonoBehaviour
 
             isGrounded = false;
             jumpPressed = false;
+            animator.SetBool("jumping", jumpPressed);
+            animator.SetBool("OnGround", isGrounded);
         }
         if(isGrounded == false && jumpPressed == true)
         {
             jumpPressed = false;
+            animator.SetBool("jumping", jumpPressed);
+            
         }
 
         Vector3 camDir = cam.transform.rotation * direction;
         Vector3 targetDirection = new Vector3(camDir.x, 0, camDir.z);
-        if(cam.transform.position.y <= transform.position.y)
-        {
-            //targetDirection.x = targetDirection.x * -1;
-            //targetDirection.z = targetDirection.z * -1;
-        }
-        if(direction != Vector2.zero)
-        {
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(targetDirection), Time.deltaTime * turnvelocity);
-        }
-     player.linearVelocity = new Vector3(
+      
+        transform.rotation = new quaternion(transform.rotation.x, -cam.rotation.y, transform.rotation.z, transform.rotation.w);
+        player.linearVelocity = new Vector3(
      targetDirection.normalized.x * speed,
      player.linearVelocity.y,
      targetDirection.normalized.z * speed);
@@ -94,6 +91,7 @@ public class PlayerMovomente : MonoBehaviour
             if (contact.normal.y > 0.5f)
             {
                 isGrounded = true;
+                animator.SetBool("OnGround", isGrounded);
                 break;
             }
         }
@@ -101,6 +99,7 @@ public class PlayerMovomente : MonoBehaviour
     private void OnCollisionExit(Collision collision)
     {
         isGrounded = false;
+        animator.SetBool("OnGround", isGrounded);
     }
     
 }
