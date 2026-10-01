@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 7547108348953922801}
   - component: {fileID: 4449680911152777017}
   - component: {fileID: 1481921582080687796}
-  m_Layer: 0
+  - component: {fileID: 8161528387491271088}
+  - component: {fileID: 653770162461360289}
+  m_Layer: 6
   m_Name: Enemy2 The House
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,10 +31,11 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 37.93588, y: 14.187, z: -130.5475}
-  m_LocalScale: {x: 1.1131, y: 0.92890424, z: 1.1131}
+  m_LocalScale: {x: 2.8446383, y: 2.3739076, z: 2.8446383}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3557117597490651610}
+  - {fileID: 7499338173385073853}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7547108348953922801
@@ -113,6 +116,35 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8161528387491271088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117509134415447646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6951b744323599b488bb1a77dbb39cda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RangedEnemyScript
+  directionToPlayer: {x: 0, y: 0, z: 0}
+  FoundPlayer: 0
+  CurrentState: 0
+--- !u!114 &653770162461360289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117509134415447646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a8dceff84e986949a50eba51a346f55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimplePool.EnemyFire
+  m_bulletPool: {fileID: 0}
+  FirePoint: {fileID: 0}
 --- !u!1 &613001971748720238
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,7 +157,7 @@ GameObject:
   - component: {fileID: 2262807263658964875}
   - component: {fileID: 782394674222084447}
   - component: {fileID: 3473188105428777740}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +269,7 @@ GameObject:
   - component: {fileID: 2090358752592233296}
   - component: {fileID: 2751149946371230078}
   - component: {fileID: 4888544386505767697}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,6 +369,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &4788151870115129824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7499338173385073853}
+  m_Layer: 6
+  m_Name: firepoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7499338173385073853
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4788151870115129824}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.252, y: 1.064, z: -0.08}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3301577341034615995}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5206859232659643004
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,7 +412,7 @@ GameObject:
   - component: {fileID: 8069140911921186961}
   - component: {fileID: 1911908033352125964}
   - component: {fileID: 3900797434323225100}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -463,7 +526,7 @@ GameObject:
   - component: {fileID: 3666257347423539644}
   - component: {fileID: 3308353714901946364}
   - component: {fileID: 6594543523256941016}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ChimneyInside
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5382,7 +5445,7 @@ GameObject:
   - component: {fileID: 3684860135384711708}
   - component: {fileID: 4774153325840231620}
   - component: {fileID: 7527970563218627622}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: roof
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5495,7 +5558,7 @@ GameObject:
   - component: {fileID: 6422284827308021160}
   - component: {fileID: 7394430727708523127}
   - component: {fileID: 1468571373358534867}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ public class PlayerMovomente : MonoBehaviour
     public float turnsmoothtime = 0.4f;
     public float speed;
     private Vector2 direction;
-    private float turnvelocity = 5f;
+    //private float turnvelocity = 5f;
 
     public InputActionReference jumping;
     public float jumpHeight = 2f;
