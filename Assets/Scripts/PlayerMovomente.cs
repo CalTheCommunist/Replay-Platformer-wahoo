@@ -71,6 +71,7 @@ public class PlayerMovomente : MonoBehaviour
         Vector3 targetDirection = new Vector3(camDir.x, 0, camDir.z);
       
         transform.rotation = new quaternion(transform.rotation.x, cam.rotation.y, transform.rotation.z, transform.rotation.w);
+        Debug.Log(direction);
         player.linearVelocity = new Vector3(
      targetDirection.normalized.x * speed,
      player.linearVelocity.y,
