@@ -32,7 +32,7 @@ public class RangedEnemyScript : MonoBehaviour
     {
         if (CurrentState == States.Idle)
         {
-            Debug.Log("Enemy is Idle");
+            //Debug.Log("Enemy is Idle");
             timer = timer + Time.deltaTime;
             if(timer >= 5)
             {
@@ -41,11 +41,11 @@ public class RangedEnemyScript : MonoBehaviour
             }
         }
         if (CurrentState == States.Search) {
-            Debug.Log("Enemy is Searching");
+            //Debug.Log("Enemy is Searching");
             if (FoundPlayer == true)
             {
                 CurrentState = States.Attack;
-                Debug.Log("Enemy is attacking");
+               // Debug.Log("Enemy is attacking");
             }
         looking();
         }

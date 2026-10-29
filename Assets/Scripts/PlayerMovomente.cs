@@ -69,9 +69,11 @@ public class PlayerMovomente : MonoBehaviour
         //temporary movement until i find a better way to do this, originally used to turn the player where you were walking instead of just sliding to the side.
         Vector3 camDir = cam.transform.rotation * direction;
         Vector3 targetDirection = new Vector3(camDir.x, 0, camDir.z);
+        Debug.Log($"CamdirX {camDir.x} CamdirZ {camDir.z} CamRotationY {cam.rotation.y} CamEulerRotationY {cam.transform.eulerAngles.y/360f}");
+
       
-        transform.rotation = new quaternion(transform.rotation.x, cam.rotation.y, transform.rotation.z, transform.rotation.w);
-        Debug.Log(direction);
+        transform.rotation = Quaternion.Euler(transform.eulerAngles.x, cam.transform.eulerAngles.y, transform.eulerAngles.z);
+        //Debug.Log(transform.rotation.y);
         player.linearVelocity = new Vector3(
      targetDirection.normalized.x * speed,
      player.linearVelocity.y,
