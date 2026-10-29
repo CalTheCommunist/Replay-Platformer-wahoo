@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8789160102516266176}
   - component: {fileID: 5614728696957926562}
   - component: {fileID: 5143244522888546076}
-  - component: {fileID: 3059226096697888621}
   - component: {fileID: 7611573997866193462}
   - component: {fileID: 3062422128292002230}
   - component: {fileID: 2384611323583957739}
@@ -91,26 +90,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &3059226096697888621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 766714899328368480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a1660f1bc03f064c852d54c947ef45a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovomente
-  cam: {fileID: 0}
-  player: {fileID: 7611573997866193462}
-  move: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  speed: 10
-  jumping: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  jumpHeight: 2.5
-  isGrounded: 1
-  animator: {fileID: 2384611323583957739}
 --- !u!54 &7611573997866193462
 Rigidbody:
   m_ObjectHideFlags: 0
