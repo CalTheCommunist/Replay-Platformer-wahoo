@@ -32,6 +32,7 @@ public class PlayerMovomenteplayer2 : MonoBehaviour
    
     void Start()
     {
+        player = GetComponent<Rigidbody>();
         //lock the cursor
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
